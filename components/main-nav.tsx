@@ -24,9 +24,9 @@ export default function MainNav({
       active: pathname === `/create-blogs`,
     },
     {
-      href: `/${params.storeId}/api-page`,
+      href: `/api-page`,
       label: "API",
-      active: pathname === `/${params.storeId}/api-page`,
+      active: pathname === `/api-page`,
     },
   ];
   return (
