@@ -41,7 +41,7 @@ export default function BlogCard({ data }: BlogListProps) {
                 </div>
 
                 <CardDescription className="text-gray-700">
-                  {blog?.content}
+                  {blog?.content.substring(0, 50)}
                 </CardDescription>
               </div>
               <div className=" flex flex-col justify-center">
