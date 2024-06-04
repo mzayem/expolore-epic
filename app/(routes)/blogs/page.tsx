@@ -1,5 +1,6 @@
 import Container from "@/components/ui/container";
 import { BlogsClient } from "./components/blogs-client";
+import { Separator } from "@radix-ui/react-separator";
 
 export default function BlogFormPage() {
   return (

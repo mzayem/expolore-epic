@@ -23,11 +23,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import ImageUpload from "@/components/ui/image-upload";
-import { AlertModal } from "@/components/modals/alert-modal";
+import { AlertModal } from "@/components/ui/alert-modal";
+import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   title: z.string().min(1),
+  name: z.string().min(1),
   images: z.object({ url: z.string() }).array(),
+  content: z.string().min(1),
 });
 
 type BlogFormValues = z.infer<typeof formSchema>;
@@ -52,7 +55,7 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
       title: "",
-      createrName: "",
+      name: "",
       images: [],
       content: "",
     },
@@ -148,10 +151,27 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
           <div className="grid grid-cols-3 gap-8">
             <FormField
               control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Created Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="your name"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Label</FormLabel>
+                  <FormLabel>Blog Title</FormLabel>
                   <FormControl>
                     <Input
                       disabled={loading}
@@ -164,6 +184,23 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
               )}
             />
           </div>
+          <FormField
+            control={form.control}
+            name="content"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Content</FormLabel>
+                <FormControl>
+                  <Textarea
+                    disabled={loading}
+                    placeholder="Type blog content here..."
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <Button disabled={loading} className="ml-auto" type="submit">
             {action}
           </Button>

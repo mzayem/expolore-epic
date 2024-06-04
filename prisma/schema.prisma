@@ -18,7 +18,7 @@ datasource db {
 model Blog {
   id           String      @id @default(uuid())
   title        String  
-  createrName  String 
+  name         String 
   content      String      @default("")
   images       Image[]
   createdAt    DateTime    @default(now())
@@ -28,8 +28,8 @@ model Blog {
 
 model Image {
   id           String      @id @default(uuid())
-  blogId    String
-  blog      Blog        @relation(fields: [blogId] , references: [id] , onDelete: Cascade)
+  blogId       String
+  blog         Blog        @relation(fields: [blogId] , references: [id] , onDelete: Cascade)
   url          String
   createdAt    DateTime    @default(now())
   updatedAt    DateTime    @updatedAt
