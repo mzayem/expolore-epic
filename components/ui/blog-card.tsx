@@ -23,7 +23,7 @@ interface BlogListProps {
 export default function BlogCard({ data }: BlogListProps) {
   return (
     <>
-      <div className="flex">
+      <div className="flex-col">
         {data.map((blog) => (
           <Card key={blog.id} className=" flex flex-col space-y-5 my-10 w-full">
             <CardContent className="flex flex-row gap-10 py-5">
