@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -10,7 +10,6 @@ export default function MainNav({
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
-  const params = useParams();
 
   const route = [
     {
@@ -19,9 +18,9 @@ export default function MainNav({
       active: pathname === `/`,
     },
     {
-      href: `/create-blogs`,
-      label: "Create Blog",
-      active: pathname === `/create-blogs`,
+      href: `/blogs`,
+      label: "Blogs",
+      active: pathname === `/blogs`,
     },
     {
       href: `/api-page`,
