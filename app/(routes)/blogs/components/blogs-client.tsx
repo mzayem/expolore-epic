@@ -7,16 +7,21 @@ import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 
 import { Separator } from "@/components/ui/separator";
-import { Blog } from "@prisma/client";
+import { Blog, Image } from "@prisma/client";
 import Banner from "@/components/banner";
+import BlogList from "@/components/blog-list";
+import BlogCard from "@/components/ui/blog-card";
+
+interface BlogWithImages extends Blog {
+  images: Image[];
+}
 
 interface BlogsClientProps {
-  data: Blog[];
+  data: BlogWithImages[];
 }
 
 export function BlogsClient({ data }: BlogsClientProps) {
   const router = useRouter();
-  const params = useParams();
 
   return (
     <>
@@ -32,6 +37,7 @@ export function BlogsClient({ data }: BlogsClientProps) {
         </Button>
       </div>
       <Separator className="my-5" />
+      <BlogCard data={data} />
     </>
   );
 }

@@ -1,13 +1,20 @@
 import Container from "@/components/ui/container";
 import { BlogsClient } from "./components/blogs-client";
-import { Separator } from "@radix-ui/react-separator";
+import prismadb from "@/lib/prismadb";
+import BlogList from "@/components/blog-list";
 
-export default function BlogFormPage() {
+export default async function BlogFormPage() {
+  const blogs = await prismadb.blog.findMany({
+    include: {
+      images: true,
+    },
+  });
+
   return (
     <>
       <Container className="flex-col">
         <div className="flex-1 space-y-4 p-8 pt-6">
-          <BlogsClient data={[]} />
+          <BlogsClient data={blogs} />
         </div>
       </Container>
     </>
