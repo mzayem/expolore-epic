@@ -23,7 +23,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import ImageUpload from "@/components/ui/image-upload";
-// import { AlertModal } from "@/components/modals/alert-modal";
+import { AlertModal } from "@/components/modals/alert-modal";
 
 const formSchema = z.object({
   title: z.string().min(1),
@@ -52,7 +52,9 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
       title: "",
+      createrName: "",
       images: [],
+      content: "",
     },
   });
 
@@ -92,12 +94,12 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
   };
   return (
     <>
-      {/* <AlertModal
+      <AlertModal
         isOpen={open}
         onClose={() => setOpen(false)}
         onConfirm={onDelete}
         loading={loading}
-      /> */}
+      />
       <div className="flex items-center justify-between">
         <Heading title={title} description={description} />
         {initialData && (
