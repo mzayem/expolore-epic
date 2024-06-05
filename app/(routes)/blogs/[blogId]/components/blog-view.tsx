@@ -1,7 +1,8 @@
 import BlogBanner from "./blog-banner";
-import Container from "@/components/ui/container";
 import { Blog, Image } from "@prisma/client";
 import BlogContent from "./content";
+import ImageView from "./image-view";
+import { useState } from "react";
 
 interface BlogWithImages extends Blog {
   images: Image[];
@@ -19,7 +20,7 @@ export default async function BlogView({ blog }: BlogViewParams) {
         author={blog?.name}
         imageUrl={blog?.images[0]?.url}
       />
-      <BlogContent content={blog?.content} images={blog?.images[0].url} />
+      <BlogContent content={blog?.content} images={blog.images} />
     </>
   );
 }

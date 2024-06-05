@@ -37,7 +37,7 @@ export default function BlogCard({ data }: BlogListProps) {
               router.push(`/blogs/${blog.id}`);
             }}
             key={blog.id}
-            className=" flex flex-col space-y-5 my-10 w-full"
+            className=" flex flex-col space-y-5 my-10 w-full "
           >
             <CardContent className="flex flex-row gap-10 py-5">
               <ImageComponent
@@ -47,17 +47,17 @@ export default function BlogCard({ data }: BlogListProps) {
                 height={70}
                 className="aspect-square justify-center object-cover w-28 h-28 rounded-md"
               />
-              <div className="flex flex-col justify-center space-y-3 w-4/5 ">
+              <div className="flex flex-col justify-center w-3/5 space-y-3 ">
                 <div>
                   <CardTitle>{blog.title}</CardTitle>
-                  <p className=" text-gray-500">Author: {blog?.name}</p>
+                  <p className=" text-gray-500 py-2">Author: {blog?.name}</p>
                 </div>
 
                 <CardDescription className="text-gray-700">
                   {blog?.content.substring(0, 50)}
                 </CardDescription>
               </div>
-              <div className=" flex flex-col justify-center">
+              <div className=" flex flex-col w-1/5 justify-center">
                 <Button>view post</Button>
               </div>
             </CardContent>

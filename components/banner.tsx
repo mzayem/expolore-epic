@@ -8,7 +8,7 @@ interface BannerProps {
 export default function Banner({ label, imageUrl }: BannerProps) {
   return (
     <div
-      className="flex flex-col  justify-center items-center  h-[750px] bg-cover overflow-hidden bg-left-bottom"
+      className="flex flex-col h-[200px] justify-center items-center md:h-[400px] sm:h-[400px] lg:h-[750px] bg-cover overflow-hidden bg-left-bottom"
       style={{
         backgroundImage: `url(${imageUrl})`,
       }}

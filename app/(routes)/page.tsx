@@ -5,6 +5,7 @@ import prismadb from "@/lib/prismadb";
 
 export default async function Home() {
   const blogs = await prismadb.blog.findMany({
+    take: 10,
     include: {
       images: true,
     },
