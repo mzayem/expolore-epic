@@ -2,6 +2,8 @@ import Container from "@/components/ui/container";
 import { BlogsClient } from "./components/blogs-client";
 import prismadb from "@/lib/prismadb";
 
+export const revalidate = 0;
+
 export default async function BlogsPage() {
   const blogs = await prismadb.blog.findMany({
     include: {
