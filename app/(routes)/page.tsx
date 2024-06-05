@@ -1,5 +1,5 @@
 import Banner from "@/components/banner";
-import BlogList from "@/components/blog-list";
+import BlogList from "@/components/blog-feed";
 import Container from "@/components/ui/container";
 import prismadb from "@/lib/prismadb";
 

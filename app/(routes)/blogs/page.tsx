@@ -1,9 +1,8 @@
 import Container from "@/components/ui/container";
 import { BlogsClient } from "./components/blogs-client";
 import prismadb from "@/lib/prismadb";
-import BlogList from "@/components/blog-list";
 
-export default async function BlogFormPage() {
+export default async function BlogsPage() {
   const blogs = await prismadb.blog.findMany({
     include: {
       images: true,

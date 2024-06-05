@@ -2,15 +2,12 @@
 
 import { Blog, Image } from "@prisma/client";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./card";
+import { Card, CardContent, CardDescription, CardTitle } from "./card";
 import ImageComponent from "next/image";
 import { Button } from "./button";
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface BlogWithImages extends Blog {
   images: Image[];
@@ -21,11 +18,27 @@ interface BlogListProps {
 }
 
 export default function BlogCard({ data }: BlogListProps) {
+  const router = useRouter();
+
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
     <>
       <div className="flex-col">
         {data.map((blog) => (
-          <Card key={blog.id} className=" flex flex-col space-y-5 my-10 w-full">
+          <Card
+            onClick={() => {
+              router.push(`/blogs/${blog.id}`);
+            }}
+            key={blog.id}
+            className=" flex flex-col space-y-5 my-10 w-full"
+          >
             <CardContent className="flex flex-row gap-10 py-5">
               <ImageComponent
                 src={blog?.images?.[0]?.url}

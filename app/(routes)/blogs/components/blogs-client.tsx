@@ -8,8 +8,6 @@ import { Heading } from "@/components/ui/heading";
 
 import { Separator } from "@/components/ui/separator";
 import { Blog, Image } from "@prisma/client";
-import Banner from "@/components/banner";
-import BlogList from "@/components/blog-list";
 import BlogCard from "@/components/ui/blog-card";
 
 interface BlogWithImages extends Blog {
@@ -31,7 +29,7 @@ export function BlogsClient({ data }: BlogsClientProps) {
           description="Read and create blogs here"
         />
 
-        <Button onClick={() => router.push(`/blogs/new`)}>
+        <Button onClick={() => router.push(`/blogs/create/new`)}>
           <Plus className="mr-2 h-4 w-4 " />
           Create New
         </Button>
