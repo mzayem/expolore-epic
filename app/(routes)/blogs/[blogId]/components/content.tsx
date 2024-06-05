@@ -37,7 +37,7 @@ export default function BlogContent({ content, images }: BlogContentProps) {
         opts={{
           align: "start",
         }}
-        className="w-full max-w-screen-lg px-8 relative"
+        className="w-full max-w-screen-lg px-8 relative pb-10"
       >
         <CarouselContent>
           {images.map((image) => (
@@ -53,7 +53,7 @@ export default function BlogContent({ content, images }: BlogContentProps) {
                       src={image.url}
                       alt="image"
                       layout="fill"
-                      className="object-cover"
+                      className="object-cover rounded-md"
                     />
                   </CardContent>
                 </Card>
