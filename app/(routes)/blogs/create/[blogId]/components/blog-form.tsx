@@ -148,7 +148,7 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
               </FormItem>
             )}
           />
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 pr-5 gap-8">
             <FormField
               control={form.control}
               name="name"
