@@ -24,7 +24,7 @@ export default function ImageView({ image, isOpen, onClose }: ImageViewProps) {
   return (
     <div>
       <Dialog open={isOpen} onOpenChange={onChange}>
-        <DialogContent className="w-auto h-[90vh]">
+        <DialogContent className="w-[90vw] h-[90vh]">
           <div className="relative">
             <Image
               src={image}
