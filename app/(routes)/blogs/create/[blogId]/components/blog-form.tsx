@@ -3,7 +3,7 @@
 import * as z from "zod";
 import axios from "axios";
 import { useState } from "react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { Trash } from "lucide-react";
 import { Blog, Image } from "@prisma/client";
 import { useForm } from "react-hook-form";
@@ -97,6 +97,7 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
   };
   return (
     <>
+      <Toaster />
       <AlertModal
         isOpen={open}
         onClose={() => setOpen(false)}
