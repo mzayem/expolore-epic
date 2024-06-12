@@ -1,4 +1,3 @@
-import NextTopLoader from "nextjs-toploader";
 import BlogView from "./components/blog-view";
 import prismadb from "@/lib/prismadb";
 
@@ -22,7 +21,6 @@ export default async function BlogPage({
 
   return (
     <>
-      <NextTopLoader />
       <BlogView blog={blog} />
     </>
   );

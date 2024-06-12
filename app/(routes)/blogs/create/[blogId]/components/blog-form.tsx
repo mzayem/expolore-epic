@@ -155,7 +155,7 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Created Name</FormLabel>
+                  <FormLabel>Creater Name</FormLabel>
                   <FormControl>
                     <Input
                       disabled={loading}

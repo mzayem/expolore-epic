@@ -1,7 +1,5 @@
 "use client";
 
-import Container from "@/components/ui/container";
-
 interface blogBannerProps {
   label: string;
   author: string;

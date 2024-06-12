@@ -53,21 +53,6 @@ export async function PATCH(
       return new NextResponse("Blog ID is required", { status: 400 });
     }
 
-    await prismadb.blog.update({
-      where: {
-        id: params.blogId,
-      },
-      data: {
-        name,
-        title,
-        content,
-
-        images: {
-          deleteMany: {},
-        },
-      },
-    });
-
     const blog = await prismadb.blog.update({
       where: {
         id: params.blogId,

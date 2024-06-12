@@ -1,7 +1,7 @@
 "use client";
 
 import { Copy, Server } from "lucide-react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 import { Badge, BadgeProps } from "@/components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -34,6 +34,7 @@ export const ApiAlert: React.FC<ApiAlertProps> = ({
   };
   return (
     <Alert>
+      <Toaster />
       <Server className="h-4 w-4" />
       <AlertTitle className="flex items-center gap-x-2">
         {title}

@@ -1,8 +1,6 @@
 import BlogBanner from "./blog-banner";
 import { Blog, Image } from "@prisma/client";
 import BlogContent from "./content";
-import ImageView from "./image-view";
-import { useState } from "react";
 
 interface BlogWithImages extends Blog {
   images: Image[];
