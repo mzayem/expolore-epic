@@ -34,7 +34,6 @@ export const ApiAlert: React.FC<ApiAlertProps> = ({
   };
   return (
     <Alert>
-      <Toaster />
       <Server className="h-4 w-4" />
       <AlertTitle className="flex items-center gap-x-2">
         {title}

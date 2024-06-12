@@ -97,7 +97,7 @@ export const BlogForm: React.FC<BlogFormProps> = ({ initialData }) => {
   };
   return (
     <>
-      <Toaster />
+      
       <AlertModal
         isOpen={open}
         onClose={() => setOpen(false)}
